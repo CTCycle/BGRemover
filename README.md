@@ -13,4 +13,4 @@ Requirement.txt file is provided to ensure full compatibility with the python ap
 # How to use
 
 Run the main python file (BGRemover.py) and use the GUI to process the pictures. Remember that the pretrained model works best on human subjects, and you results may vary when used with other subjects.
-Add the pretrained weights (model.h5) in the modules/pretrained model folder, or else the software will throw an error (the repository already has model.h5 inside the correct folder).
+Add the pretrained weights (model.h5) in modules/pretrained model, or else the software will throw an error

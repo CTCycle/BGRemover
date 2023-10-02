@@ -6,11 +6,11 @@ as well as the output folder where you want to store pictures with removed backg
 
 Weight file (for the DeepLabV3+ model): https://drive.google.com/file/d/17QKxSIBFhyJoDps93-sCVHnVV6UWS1sG/view
 
-# Requirements
+## Requirements
 
 Requirement.txt file is provided to ensure full compatibility with the python application. The application has been tested using Python 3.10.12  
 
-# How to use
+## How to use
 
 Run the main python file (BGRemover.py) and use the GUI to process the pictures. Remember that the pretrained model works best on human subjects, and you results may vary when used with other subjects.
 Add the pretrained weights (model.h5) in modules/pretrained model, or else the software will throw an error

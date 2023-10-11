@@ -14,3 +14,5 @@ Requirement.txt file is provided to ensure full compatibility with the python ap
 
 Run the main python file (BGRemover.py) and use the GUI to process the pictures. Remember that the pretrained model works best on human subjects, and you results may vary when used with other subjects.
 Add the pretrained weights (model.h5) in modules/pretrained model, or else the software will throw an error
+
+![GUI_snapshot](https://github.com/CTCycle/BGRemover/assets/101833494/276edb5a-a063-4e32-81e4-b5d59b057637)

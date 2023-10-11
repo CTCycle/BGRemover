@@ -16,6 +16,6 @@ Requirement.txt file is provided to ensure full compatibility with the python ap
 
 Run the main python file (BGRemover.py) and use the GUI to navigate the various options and process the pictures. Here you can find a snapshot of the main GUI. Select the input folder where you images are located, and an output folder to save the processed pictures. First click on Load images to preload all images from the input folder, then click on Remove background. The progress bar will show the current state of the operations!
 
-![GUI_snapshot](https://github.com/CTCycle/BGRemover/assets/101833494/276edb5a-a063-4e32-81e4-b5d59b057637)
+![GUI_snapshot](https://github.com/CTCycle/BGRemover/assets/101833494/35c5a90e-20a5-4b60-af86-bcad99271452)
 
 **Add the pretrained weights (model.h5) in modules/pretrained model, or else the software will throw an error!!!**

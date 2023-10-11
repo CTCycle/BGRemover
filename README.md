@@ -4,7 +4,9 @@ A python-based application to remove background from pictures. This app is inspi
 use of the DeepLabV3+ model trained on the human image segmentation dataset. BGRemover includes a GUI (written using PySimpleGUI) that allows selecting a folder where the pictures are contained, 
 as well as the output folder where you want to store pictures with removed background. Once you have loaded the pictures, just hit the "remove background" button and wait for the magic to happen! The embedded progress bar will show the current progress of the operations. Pictures are kept with same size ratio of the original images! 
 
-Weight file (for the DeepLabV3+ model): https://drive.google.com/file/d/17QKxSIBFhyJoDps93-sCVHnVV6UWS1sG/view
+_Remember that the pretrained DeepLabV3+ model works best on images of humans, and you results may vary when used with other subjects._
+
+**Weight file (for the DeepLabV3+ model):** https://drive.google.com/file/d/17QKxSIBFhyJoDps93-sCVHnVV6UWS1sG/view
 
 ## Requirements
 
@@ -12,7 +14,8 @@ Requirement.txt file is provided to ensure full compatibility with the python ap
 
 ## How to use
 
-Run the main python file (BGRemover.py) and use the GUI to process the pictures. Remember that the pretrained model works best on human subjects, and you results may vary when used with other subjects.
-Add the pretrained weights (model.h5) in modules/pretrained model, or else the software will throw an error
+Run the main python file (BGRemover.py) and use the GUI to navigate the various options and process the pictures. Here you can find a snapshot of the main GUI. Select the input folder where you images are located, and an output folder to save the processed pictures. First click on Load images to preload all images from the input folder, then click on Remove background. The progress bar will show the current state of the operations!
 
 ![GUI_snapshot](https://github.com/CTCycle/BGRemover/assets/101833494/276edb5a-a063-4e32-81e4-b5d59b057637)
+
+**Add the pretrained weights (model.h5) in modules/pretrained model, or else the software will throw an error!!!**

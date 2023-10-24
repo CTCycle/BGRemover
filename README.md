@@ -10,12 +10,24 @@ DeepLabv3+ is a semantic segmentation architecture that improves upon DeepLabv3 
 _Remember that the pretrained DeepLabV3+ model works best on images of humans, and you results may vary when used with other subjects._
 
 ## How to use
-Run the main python file (BGRemover.py) and use the GUI to navigate the various options and process the pictures. Select the input folder where you images are located, and an output folder to save the processed pictures. First click on Load images to preload all images from the input folder, then click on Remove background. The progress bar will show the current state of the operations!
+Run the main python file (BGRemover.py) and use the GUI to navigate the various options:
+
+In the **Select folder paths** frame, you can select both the source folder (where your pictures are located) and the output folder (where you want to save your processed images).
+
+**Load pictures:** once you have selected an input folder, clicking this button will load them all
+**Remove background:** process your pictures with a click! The progress bar will show the current state of the operation
 
 ### Requirements
-Requirement.txt file is provided to ensure full compatibility with the python application. The application has been tested using Python 3.10.12 
+This application has the following dependencies:
 
-**Add the pretrained weights (model.h5) in modules/pretrained model, or else the software will throw an error!!!**
+- `numpy==1.25.2`
+- `opencv-python==4.8.0.76`
+- `PySimpleGUI==4.60.5`
+- `tensorflow==2.10.0`
+
+These dependencies are specified in the provided `requirements.txt` file to ensure full compatibility with the application. The application has been tested using Python 3.10.12.
+
+Also, remember to add the **pretrained weights** in modules/pretrained model, or else the software will throw an error!
 
 ## Graphic interface
 

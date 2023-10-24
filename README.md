@@ -15,6 +15,7 @@ Run the main python file (BGRemover.py) and use the GUI to navigate the various 
 In the **Select folder paths** frame, you can select both the source folder (where your pictures are located) and the output folder (where you want to save your processed images).
 
 **Load pictures:** once you have selected an input folder, clicking this button will load them all
+
 **Remove background:** process your pictures with a click! The progress bar will show the current state of the operation
 
 ### Requirements

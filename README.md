@@ -18,14 +18,14 @@ In the **Select folder paths** frame, you can select both the source folder (whe
 **Remove background:** process your pictures with a click! The progress bar will show the current state of the operation
 
 ### Requirements
-This application has the following dependencies:
+This application has been developed and tested using the following dependencies (Python 3.10.12):
 
 - `numpy==1.25.2`
 - `opencv-python==4.8.0.76`
 - `PySimpleGUI==4.60.5`
 - `tensorflow==2.10.0`
 
-These dependencies are specified in the provided `requirements.txt` file to ensure full compatibility with the application. The application has been tested using Python 3.10.12.
+These dependencies are specified in the provided `requirements.txt` file to ensure full compatibility with the application. 
 
 Also, remember to add the **pretrained weights** in modules/pretrained model, or else the software will throw an error!
 

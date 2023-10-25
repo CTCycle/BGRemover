@@ -7,6 +7,7 @@ BGRemover is a python-based application to remove background from pictures. This
 DeepLabv3+ is a semantic segmentation architecture that improves upon DeepLabv3 with several modifications. It was introduced by Chen et al. in 2018. The model employs atrous convolution in cascade or in parallel to capture multi-scale context by adopting multiple atrous rates. Furthermore, the Atrous Spatial Pyramid Pooling (ASPP) module from DeepLabv2 augmented with image-level features encoding global context and further boost performance. The changes to the ASPP module are that the authors apply global average pooling on the last feature map of the model, feed the resulting image-level features to a 1 × 1 convolution with 256 filters (and batch normalization), and then bilinearly upsample the feature to the desired spatial dimension. In the end, the improved ASPP consists of (a) one 1×1 convolution and three 3 × 3 convolutions with rates = (6, 12, 18) when output stride = 16 (all with 256 filters and batch normalization), and (b) the image-level features.
 
 **Weight file (for the DeepLabV3+ model):** https://drive.google.com/file/d/17QKxSIBFhyJoDps93-sCVHnVV6UWS1sG/view
+
 _Remember that the pretrained DeepLabV3+ model works best on images of humans, and you results may vary when used with other subjects._
 
 ## How to use
@@ -15,6 +16,7 @@ Run the main python file (BGRemover.py) and use the GUI to navigate the various 
 In the **Select folder paths** frame, you can select both the source folder (where your pictures are located) and the output folder (where you want to save your processed images).
 
 **Load pictures:** once you have selected an input folder, clicking this button will load them all
+
 **Remove background:** process your pictures with a click! The progress bar will show the current state of the operation
 
 ### Requirements

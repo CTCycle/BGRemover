@@ -4,17 +4,19 @@ import PySimpleGUI as sg
 import tensorflow as tf
 import threading
 from tensorflow.keras.utils import CustomObjectScope
+
+# set warnings
+#------------------------------------------------------------------------------
 import warnings
 warnings.simplefilter(action='ignore', category = Warning)
 
-# [IMPORT MODULES AND CLASSES]
-#==============================================================================
-sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))       
+# import modules and classes
+#------------------------------------------------------------------------------    
 from modules.components.data_classes import FolderInspector, ImageOperations
 from modules.components.model_classes import PatternRecognition, IoU, dice_coef, dice_loss
 
-# [DEFAULT FOLDER PATHS]
-#==============================================================================
+# default folder path
+#------------------------------------------------------------------------------
 initial_folder = os.path.dirname(os.path.realpath(__file__))
 
 # [WINDOW THEME AND OPTIONS]

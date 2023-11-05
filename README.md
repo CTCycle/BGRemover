@@ -28,7 +28,7 @@ These dependencies are specified in the provided `requirements.txt` file to ensu
 ## Graphic interface
 
 Here you can find a snapshot of the main program GUI.
+![Immagine](https://github.com/CTCycle/BGRemover/assets/101833494/4cda7251-da51-4cd2-aab9-67f10616b0c1)
 
-![GUI_snapshot](https://github.com/CTCycle/BGRemover/assets/101833494/35c5a90e-20a5-4b60-af86-bcad99271452)
 
 

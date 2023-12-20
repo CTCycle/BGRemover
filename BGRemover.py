@@ -64,7 +64,7 @@ while True:
     event, values = main_window.read()
 
     if event == sg.WIN_CLOSED:
-        break   
+        break  
 
     if event == '-PATHINPUT-':
         if values['-PATHINPUT-'] != '':

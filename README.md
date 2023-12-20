@@ -9,7 +9,7 @@ DeepLabv3+ is a semantic segmentation architecture that improves upon DeepLabv3 
 **Weights file (for the DeepLabV3+ model):** https://drive.google.com/file/d/17QKxSIBFhyJoDps93-sCVHnVV6UWS1sG/view
 
 ## How to use
-Run the main python file (BGRemover.py) and use the GUI to navigate the various options. In the main window, you can select both the source folder where your pictures are located, and the output folder where you want to save your processed images. Then, you can use the **Load pictures** button to load all pictures within the selected input folder. Eventually, click on **Remove background** ro process your pictures (check the progress bar to monitor current state of the operation).
+Run the main python file (BGRemover.py) and use the GUI to navigate the various options. In the main window, you can select both the source folder where your pictures are located, and the output folder where you want to save your processed images. Then, you can use the **Load pictures** button to load all pictures within the selected input folder. Eventually, click on **Remove background** to process your pictures (check the progress bar to monitor current state of the operation).
 
 ### Requirements
 This application has been developed and tested using the following dependencies (Python 3.10.12):
@@ -22,9 +22,12 @@ This application has been developed and tested using the following dependencies 
 These dependencies are specified in the provided `requirements.txt` file to ensure full compatibility with the application. As a very important note, remember to add the **pretrained weights** in modules/pretrained model, or else the software will throw an error!
 
 ## Graphic interface
-
 Here you can find a snapshot of the main program GUI.
 ![Immagine](https://github.com/CTCycle/BGRemover/assets/101833494/4cda7251-da51-4cd2-aab9-67f10616b0c1)
+
+## License
+This project is licensed under the terms of the MIT license. See the LICENSE file for details.
+
 
 
 

@@ -3,28 +3,19 @@ import cv2
 import itertools
 
 
+# [FOLDER INSPECTION]
+#==============================================================================
 # define the class for inspection of the input folder and generation of files list.
 # The extension as argument allows identifying specific files (.csv, .xlsx, .pdf, etc)
 # and making a list of those than can be called with the 'target_files' method
 #==============================================================================
-#==============================================================================
-#==============================================================================
-class FolderInspector:
+class FolderInspector:    
     
-    """ 
-    FolderInspector(path)
     
-    Class for inspection of folders to find files with given extensions, and build
-    list of files name and paths
-    
-    """ 
-    
-    #==========================================================================
+    #--------------------------------------------------------------------------
     def multiext_inspector(self, path, extensions):
         
-        """ 
-        multiext_inspector(path, extensions)
-        
+        '''        
         Inspect the folder at the given path and generates list of file names with
         a given extension (multiple extensions each time)
         
@@ -35,7 +26,7 @@ class FolderInspector:
         Returns: 
             list of target files with various extensions
         
-        """
+        '''
         os.chdir(path)
         self.all_files = os.listdir(path)
         self.multiext_files = []
@@ -52,15 +43,14 @@ class FolderInspector:
 
 # Reading pictures and operating with them
 #==============================================================================
-#==============================================================================
+# Operations with images in different format
 #==============================================================================
 class ImageOperations:
     
+    #--------------------------------------------------------------------------
     def resize_same_AR(self, H, W, target_size, picture):
         
-        '''
-        resize_same_AR(H, W, target_size, picture)
-        
+        '''       
         Resizes an image while maintaining its aspect ratio (AR).
     
         Keyword arguments:   

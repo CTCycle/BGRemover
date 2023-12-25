@@ -3,12 +3,10 @@ import numpy as np
 import cv2
 import tensorflow as tf
 
-
-# Reading pictures and operating with them
-#==============================================================================
+#------------------------------------------------------------------------------
 def IoU(y_true, y_pred):
     
-    """
+    '''
     Calculates the Intersection over Union (IoU) metric for two binary masks.
     
     Keyword arguments:         
@@ -18,7 +16,7 @@ def IoU(y_true, y_pred):
     Returns:         
         x (tf.tensor): tensor containing the IoU value
     
-    """   
+    '''  
     np.random.seed(42)
     tf.random.set_seed(42)
     
@@ -30,10 +28,10 @@ def IoU(y_true, y_pred):
         return x
     return tf.numpy_function(f, [y_true, y_pred], tf.float32)
 
-#==============================================================================
+#------------------------------------------------------------------------------
 def dice_coef(y_true, y_pred):
     
-    """
+    '''
     Calculates the Dice coefficient, a metric used to evaluate the similarity 
     of two sets of data, typically used for binary image segmentation.
    
@@ -45,7 +43,7 @@ def dice_coef(y_true, y_pred):
     Returns:
     dice_coef (float): The Dice coefficient.
     
-    """
+    '''
     np.random.seed(42)
     tf.random.set_seed(42)
     
@@ -58,10 +56,10 @@ def dice_coef(y_true, y_pred):
     
     return dice_coef
 
-#==============================================================================
+#------------------------------------------------------------------------------
 def dice_loss(y_true, y_pred):
     
-    """
+    '''
     Calculates the loss of the Dice function as 1 - Dice coefficient.
    
     Keyword arguments:     
@@ -71,22 +69,21 @@ def dice_loss(y_true, y_pred):
     Returns:        
         dice_loss (float): the Dice loss
     
-    """  
+    '''  
     np.random.seed(42)
-    tf.random.set_seed(42)
-    
+    tf.random.set_seed(42)    
     dice_loss = 1.0 - dice_coef(y_true, y_pred)
     
     return dice_loss  
     
     
-# Reading pictures and operating with them
+# [PATTERN RECOGNITION]
 #==============================================================================
-#==============================================================================
+# Perform segmentation and pattern recognition operations
 #==============================================================================
 class PatternRecognition:
     
-    #==========================================================================
+    #------------------------------------------------------------------------------
     def background_removal(self, images_path, savepath, model, pbar):
         BG_pictures = []
         for id, path in enumerate(images_path):

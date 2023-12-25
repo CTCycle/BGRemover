@@ -3,6 +3,7 @@ import numpy as np
 import cv2
 import tensorflow as tf
 
+# Intersection over Union
 #------------------------------------------------------------------------------
 def IoU(y_true, y_pred):
     
@@ -28,6 +29,7 @@ def IoU(y_true, y_pred):
         return x
     return tf.numpy_function(f, [y_true, y_pred], tf.float32)
 
+# Dice coefficient
 #------------------------------------------------------------------------------
 def dice_coef(y_true, y_pred):
     
@@ -45,8 +47,7 @@ def dice_coef(y_true, y_pred):
     
     '''
     np.random.seed(42)
-    tf.random.set_seed(42)
-    
+    tf.random.set_seed(42)    
     smooth = 1e-15
     y_true = tf.keras.layers.Flatten()(y_true)
     y_pred = tf.keras.layers.Flatten()(y_pred)
@@ -56,6 +57,7 @@ def dice_coef(y_true, y_pred):
     
     return dice_coef
 
+# Dice loss
 #------------------------------------------------------------------------------
 def dice_loss(y_true, y_pred):
     
@@ -85,6 +87,21 @@ class PatternRecognition:
     
     #------------------------------------------------------------------------------
     def background_removal(self, images_path, savepath, model, pbar):
+
+        '''
+        Removes the background from a list of images using a given model.
+    
+        Keyword arguments:     
+            self (object): The object instance.
+            images_path (list): A list of paths to the images.
+            savepath (str): The path where the images with removed backgrounds will be saved.
+            model (object): The model used for background removal.
+            pbar (object): A progress bar object.
+        
+        Returns:        
+            final_pic (ndarray): The last picture processed with the background removed.
+
+        '''
         BG_pictures = []
         for id, path in enumerate(images_path):
             pic_name = path.split('\\')[-1]
@@ -110,12 +127,7 @@ class PatternRecognition:
             cv2.imwrite(pic_savepath, final_pic)
             pbar.update(id + 1, max=len(images_path))            
         
-        return final_pic
-        
-        
-      
-        
-        
+        return final_pic       
     
   
      

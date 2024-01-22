@@ -1,0 +1,4 @@
+__pycache__
+pictures/*
+results/*
+modules/pretrained models/*

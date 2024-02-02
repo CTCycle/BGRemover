@@ -16,10 +16,6 @@ First, ensure that you have Python 3.10.12 installed on your system. Then, you c
 
 As a very important note, remember to add the **pretrained weights** in modules/pretrained model, or else the software will throw an error! **Weights file (for the DeepLabV3+ model):** https://drive.google.com/file/d/17QKxSIBFhyJoDps93-sCVHnVV6UWS1sG/view
 
-## Graphic interface
-Here you can find a snapshot of the main program GUI.
-![Immagine](https://github.com/CTCycle/BGRemover/assets/101833494/4cda7251-da51-4cd2-aab9-67f10616b0c1)
-
 ## License
 This project is licensed under the terms of the MIT license. See the LICENSE file for details.
 

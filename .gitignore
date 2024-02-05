@@ -1,4 +1,3 @@
 __pycache__
 pictures/*
-results/*
 modules/pretrained model/model.h5

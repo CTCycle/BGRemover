@@ -2,7 +2,7 @@ import os
 import PySimpleGUI as sg
 import tensorflow as tf
 import threading
-from tensorflow.keras.utils import CustomObjectScope
+from keras.api._v2.keras.utils import CustomObjectScope
 
 # set warnings
 #------------------------------------------------------------------------------

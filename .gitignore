@@ -1,3 +1,4 @@
 __pycache__
+snapshots/*
 pictures/*
 modules/pretrained model/model.h5

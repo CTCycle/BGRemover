@@ -22,7 +22,7 @@ if errorlevel 1 (
 rem Install additional tools
 echo STEP 3: Install additional libraries
 call conda install graphviz
-call pip install pydot
+call pip install pydot gradio
 if errorlevel 1 (
     echo Failed to install Graphviz or Pydot.
     goto :eof

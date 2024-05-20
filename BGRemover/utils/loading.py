@@ -3,17 +3,7 @@ import cv2
 import itertools
 
 
-# [FOLDER INSPECTION]
-#==============================================================================
-# define the class for inspection of the input folder and generation of files list.
-# The extension as argument allows identifying specific files (.csv, .xlsx, .pdf, etc)
-# and making a list of those than can be called with the 'target_files' method
-#==============================================================================
-class FolderInspector:    
-    
-    
-    #--------------------------------------------------------------------------
-    def multiext_inspector(self, path, extensions):
+def inspect_folder(path, extensions):
         
         '''        
         Inspect the folder at the given path and generates list of file names with
@@ -27,23 +17,22 @@ class FolderInspector:
             list of target files with various extensions
         
         '''
-        os.chdir(path)
-        self.all_files = os.listdir(path)
-        self.multiext_files = []
+        print(path)        
+        all_files = os.listdir(path)
+        multiext_files = []
         for ext in extensions:
-            single_ext_files = [f for f in self.all_files if f.endswith(ext)]
-            self.multiext_files.append(single_ext_files)
-        self.ext_files = list(itertools.chain.from_iterable(self.multiext_files))
-        if len(self.ext_files) > 0:
-            self.empty_folder = False
+            single_ext_files = [f for f in all_files if f.endswith(ext)]
+            multiext_files.append(single_ext_files)
+        ext_files = list(itertools.chain.from_iterable(multiext_files))
+        if len(ext_files) > 0:
+            folder_state = 0
         else:
-            self.empty_folder = True
+            folder_state = 1
             
-        return self.ext_files
+        return ext_files, folder_state
+
 
 # Reading pictures and operating with them
-#==============================================================================
-# Operations with images in different format
 #==============================================================================
 class ImageOperations:
     

@@ -1,4 +1,4 @@
 __pycache__
-snapshots/*
-pictures/*
-modules/pretrained model/model.h5
+BGRemover/pictures/*
+BGRemover/utils/model/model.h5
+docs/*

@@ -2,7 +2,7 @@
 rem Use this script to create a new environment called "BGRemover"
 
 echo STEP 1: Creation of BGRemover environment
-call conda create -n BGRemover python=3.10 
+call conda create -n BGRemover python=3.10 -y
 if errorlevel 1 (
     echo Failed to create the environment BGRemover
     goto :eof
@@ -13,20 +13,12 @@ call conda activate BGRemover
 
 rem Install additional packages with pip
 echo STEP 2: Install python libraries and packages
-call pip install numpy pandas scikit-learn matplotlib python-opencv tensorflow==2.10 
+call pip install numpy pandas scikit-learn matplotlib python-opencv tensorflow==2.10 gradio
 if errorlevel 1 (
     echo Failed to install Python libraries.
     goto :eof
 )
 
-rem Install additional tools
-echo STEP 3: Install additional libraries
-call conda install graphviz
-call pip install pydot gradio
-if errorlevel 1 (
-    echo Failed to install Graphviz or Pydot.
-    goto :eof
-)
 
 rem Print the list of dependencies installed in the environment
 echo List of installed dependencies

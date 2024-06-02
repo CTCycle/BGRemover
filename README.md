@@ -14,9 +14,13 @@ Run BGRemover.py and use the GUI to navigate the various options. In the main wi
 ## 4. Installation 
 The installation process is designed for simplicity, using .bat scripts to automatically create a virtual environment with all necessary dependencies. Please ensure that Anaconda or Miniconda is installed on your system before proceeding.
 
-- The `setup/create_environment.bat` file offers a convenient one-click solution to set up your virtual environment.
+- The `scripts/create_environment.bat` file offers a convenient one-click solution to set up your virtual environment.
+- Once the environment has been created, run `scripts/packages_setup.bat` to install the app package locally.
+- **IMPORTANT:** run `scripts/packages_setup.bat` if you move the project folder somewhere else after installation, or the app won't work!
 
-Remember to add the **pretrained weights** in `BGRemover/utils/model`, or else the software will throw an error! **Weights file (for the DeepLabV3+ model):** https://drive.google.com/file/d/17QKxSIBFhyJoDps93-sCVHnVV6UWS1sG/view
+### 4.1 Pretrained model weights 
+Remember to add the pretrained weights in `BGRemover/utils/model`, or else the software won't function properly. 
+**DeepLabV3+ model weights:** https://drive.google.com/file/d/17QKxSIBFhyJoDps93-sCVHnVV6UWS1sG/view
 
 ## 5. License
 This project is licensed under the terms of the MIT license. See the LICENSE file for details.

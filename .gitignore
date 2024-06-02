@@ -1,4 +1,6 @@
 __pycache__
+BGRemover.egg-info
+
 BGRemover/pictures/*
 BGRemover/utils/model/model.h5
 

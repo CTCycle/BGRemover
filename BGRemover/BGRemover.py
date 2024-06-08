@@ -4,10 +4,10 @@ import tensorflow as tf
 from keras.api._v2.keras.utils import CustomObjectScope
 
 # [IMPORT CUSTOM MODULES]
-from utils.loading import ImageOperations
-from utils.metrics import IoU, dice_coef, dice_loss
-from utils.recognition import PatternRecognition
-from config.pathfinder import MODEL_DIR
+from commons.utils.loading import ImageOperations
+from commons.utils.metrics import IoU, dice_coef, dice_loss
+from commons.utils.recognition import PatternRecognition
+from commons.pathfinder import MODEL_DIR
 
 # Define the background removal function
 def remove_background(images, output_folder):

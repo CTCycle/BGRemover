@@ -16,8 +16,7 @@ def inspect_folder(path, extensions):
         Returns: 
             list of target files with various extensions
         
-        '''
-        print(path)        
+        '''                
         all_files = os.listdir(path)
         multiext_files = []
         for ext in extensions:
@@ -32,12 +31,13 @@ def inspect_folder(path, extensions):
         return ext_files, folder_state
 
 
-# Reading pictures and operating with them
-#==============================================================================
+# [READING PICTURES]
+#------------------------------------------------------------------------------
 class ImageOperations:
     
+    
     #--------------------------------------------------------------------------
-    def resize_same_AR(self, H, W, target_size, picture):
+    def resize_same_AR(self, original_height, original_width, target_size, image):
         
         '''       
         Resizes an image while maintaining its aspect ratio (AR).
@@ -52,15 +52,18 @@ class ImageOperations:
             the resized image with the same aspect ratio as the original image
         
         '''
-        if H > W:
+        # Calculate the aspect ratio
+        aspect_ratio = original_width / original_height        
+        # Determine the new dimensions while maintaining the aspect ratio
+        if original_height >= original_width:
             new_height = target_size
-            new_width = int((new_height/H) * W)
-        elif W > H:
+            new_width = int(target_size * aspect_ratio)
+        else:
             new_width = target_size
-            new_height = int((new_width/W) * H)
-        elif H == W:
-            new_width, new_height = target_size, target_size        
-        res_picture = cv2.resize(picture, (new_width, new_height))
-        return res_picture 
+            new_height = int(target_size / aspect_ratio)
+        
+        # Resize the image
+        resized_image = cv2.resize(image, (new_width, new_height))
+        return resized_image 
     
    

@@ -1,11 +1,10 @@
 import os
 import numpy as np
 import cv2
-
     
     
 # [PATTERN RECOGNITION]
-#==============================================================================
+#------------------------------------------------------------------------------
 class PatternRecognition:
     
     #--------------------------------------------------------------------------
@@ -18,8 +17,7 @@ class PatternRecognition:
             self (object): The object instance.
             images_path (list): A list of paths to the images.
             savepath (str): The path where the images with removed backgrounds will be saved.
-            model (object): The model used for background removal.
-            pbar (object): A progress bar object.
+            model (object): The model used for background removal.            
         
         Returns:        
             final_pic (ndarray): The last picture processed with the background removed.
@@ -47,8 +45,7 @@ class PatternRecognition:
             final_pic = np.squeeze(final_pic)   
             BG_pictures.append(final_pic)   
             pic_savepath = os.path.join(savepath, pic_name)                
-            cv2.imwrite(pic_savepath, final_pic)
-                       
+            cv2.imwrite(pic_savepath, final_pic)                       
         
         return final_pic       
     

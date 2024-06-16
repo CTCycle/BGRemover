@@ -13,12 +13,11 @@ call conda activate BGRemover
 
 rem Install additional packages with pip
 echo STEP 2: Install python libraries and packages
-call pip install numpy pandas scikit-learn matplotlib python-opencv tensorflow==2.10 gradio
+call pip install numpy python-opencv tensorflow==2.10 gradio
 if errorlevel 1 (
     echo Failed to install Python libraries.
     goto :eof
 )
-
 
 rem Print the list of dependencies installed in the environment
 echo List of installed dependencies

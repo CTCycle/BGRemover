@@ -1,5 +1,5 @@
 @echo off
-rem Use this script to create a new environment called "BGRemover"
+rem install packages in editable mode
 
 call conda activate BGRemover && cd .. && pip install -e .
 if errorlevel 1 (

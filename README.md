@@ -19,7 +19,7 @@ The installation process is designed for simplicity, using .bat scripts to autom
 - **IMPORTANT:** run `scripts/package_setup.bat` if you move the project folder somewhere else after installation, or the app won't work!
 
 ### 4.1 Pretrained model weights 
-Remember to add the pretrained weights in `BGRemover/commons/model`, or else the software won't function properly. 
+Remember to add the pretrained weights in `BGRemover/commons/model` or the software won't function properly. 
 **DeepLabV3+ model weights:** https://drive.google.com/file/d/17QKxSIBFhyJoDps93-sCVHnVV6UWS1sG/view
 
 ## 5. License

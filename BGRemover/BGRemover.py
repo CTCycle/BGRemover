@@ -4,21 +4,16 @@ import tensorflow as tf
 from keras.api._v2.keras.utils import CustomObjectScope
 
 # [IMPORT CUSTOM MODULES]
-from commons.utils.loading import ImageOperations
-from commons.utils.metrics import IoU, dice_coef, dice_loss
-from commons.utils.recognition import PatternRecognition
-from commons.pathfinder import MODEL_DIR
+from commons.utils.metrics import BGRMetrics
+from commons.utils.recognition import background_removal
+from commons.pathfinder import MODEL_PATH
 
 # Define the background removal function
-def remove_background(images, output_folder):
-    
-    model_path = os.path.join(MODEL_DIR, 'model.h5')
-    
-    with CustomObjectScope({'iou': IoU, 'dice_coef': dice_coef, 'dice_loss': dice_loss}):
-        model = tf.keras.models.load_model(model_path)
-        
-    image_ops = ImageOperations()
-    HPR = PatternRecognition()
+def main_background_remover(images, output_folder):
+
+    metrics = BGRMetrics(seed=42)   
+    with CustomObjectScope({'iou': metrics.IoU, 'dice_coef': metrics.dice_coef, 'dice_loss': metrics.dice_loss}):
+        model = tf.keras.models.load_model(MODEL_PATH)   
     
     # Create output directory if it doesn't exist
     if not os.path.exists(output_folder):
@@ -30,7 +25,7 @@ def remove_background(images, output_folder):
         output_image_path = os.path.join(output_folder, image_name)
         
         # Perform background removal
-        processed_image = HPR.background_removal([image_path], output_folder, model)
+        processed_image = background_removal([image_path], output_folder, model)
         
         return output_image_path
 
@@ -51,9 +46,9 @@ def gradio_app():
             with gr.Column():
                 output_gallery = gr.Gallery(label="Processed Images", elem_id="gallery")
         
-        remove_bg_button.click(remove_background,
-            inputs=[input_images, output_folder],
-            outputs=output_gallery)
+        remove_bg_button.click(main_background_remover,
+                               inputs=[input_images, output_folder],
+                               outputs=output_gallery)
     
     return demo
 

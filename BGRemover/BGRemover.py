@@ -6,7 +6,7 @@ from keras.api._v2.keras.utils import CustomObjectScope
 # [IMPORT CUSTOM MODULES]
 from commons.utils.metrics import BGRMetrics
 from commons.utils.recognition import background_removal
-from commons.pathfinder import MODEL_PATH
+from BGRemover.commons.constants import MODEL_PATH
 
 # Define the background removal function
 def main_background_remover(images, output_folder):

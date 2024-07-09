@@ -14,7 +14,7 @@ Run BGRemover.py and use the GUI to navigate the various options. In the main wi
 ## 4. Installation 
 The installation process is designed for simplicity, using .bat scripts to automatically create a virtual environment with all necessary dependencies. Please ensure that Anaconda or Miniconda is installed on your system before proceeding.
 
-- The `scripts/create_environment.bat` file offers a convenient one-click solution to set up your virtual environment.
+- The `scripts/environment_setup.bat` file offers a convenient one-click solution to set up your virtual environment.
 - Once the environment has been created, run `scripts/package_setup.bat` to install the app package locally.
 - **IMPORTANT:** run `scripts/package_setup.bat` if you move the project folder somewhere else after installation, or the app won't work!
 

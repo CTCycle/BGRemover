@@ -1,6 +1,7 @@
 import numpy as np
 import tensorflow as tf
 
+
 # [METRICS]
 #------------------------------------------------------------------------------
 class BGRMetrics:
@@ -57,7 +58,7 @@ class BGRMetrics:
         dice_coef (float): The Dice coefficient.
         
         '''       
-        smooth = 1e-15
+        smooth = 1e-15       
         y_true = tf.keras.layers.Flatten()(y_true)
         y_pred = tf.keras.layers.Flatten()(y_pred)
         intersection = tf.reduce_sum(y_true * y_pred)

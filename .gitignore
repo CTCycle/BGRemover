@@ -1,7 +1,8 @@
 __pycache__
-BGRemover/pictures/*
+BGRemover/resources/pictures/*
 BGRemover/commons/model/*
 
-!.gitkeep
+*.log
 *.egg-info
+!.gitkeep
 

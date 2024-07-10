@@ -4,16 +4,19 @@ import tensorflow as tf
 from keras.api._v2.keras.utils import CustomObjectScope
 
 # [IMPORT CUSTOM MODULES]
-from commons.utils.metrics import BGRMetrics
-from commons.utils.recognition import background_removal
+from BGRemover.commons.utils.metrics import BGRMetrics
+from BGRemover.commons.utils.recognition import background_removal
 from BGRemover.commons.constants import MODEL_PATH
+from BGRemover.commons.logger import logger
+
 
 # Define the background removal function
 def main_background_remover(images, output_folder):
 
     metrics = BGRMetrics(seed=42)   
     with CustomObjectScope({'iou': metrics.IoU, 'dice_coef': metrics.dice_coef, 'dice_loss': metrics.dice_loss}):
-        model = tf.keras.models.load_model(MODEL_PATH)   
+        model = tf.keras.models.load_model(MODEL_PATH)
+        logger.debug(f'Loaded model from {MODEL_PATH}')         
     
     # Create output directory if it doesn't exist
     if not os.path.exists(output_folder):

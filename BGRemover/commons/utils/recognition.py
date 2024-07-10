@@ -1,7 +1,8 @@
 import os
-import numpy as np
 import cv2
+import numpy as np
 
+#------------------------------------------------------------------------------
 def background_removal(images_path, savepath, model):
 
     '''

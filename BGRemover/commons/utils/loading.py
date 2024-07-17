@@ -3,18 +3,22 @@ import cv2
 import itertools
 
 
+# inspect a folder to find all files with a valid extension
+###############################################################################
 def inspect_folder(path, extensions):
         
         '''        
-        Inspect the folder at the given path and generates list of file names with
-        a given extension (multiple extensions each time)
+        Inspect the folder at the given path and generate a list of file names with
+        the given extensions.
         
         Keyword arguments:   
-            path (str):        path of the target folder (str)
-            extensions (list): list of target file extension
+            path (str):        The path of the target folder.
+            extensions (list): A list of target file extensions.
         
         Returns: 
-            list of target files with various extensions
+            tuple: A tuple containing:
+                - list of str: A list of files with the specified extensions.
+                - int: The state of the folder (0 if files with the given extensions are found, 1 otherwise).
         
         '''                
         all_files = os.listdir(path)
@@ -32,7 +36,7 @@ def inspect_folder(path, extensions):
 
 
 # [READING PICTURES]
-#------------------------------------------------------------------------------
+###############################################################################
 class ImageOperations:
     
     
@@ -43,16 +47,16 @@ class ImageOperations:
         Resizes an image while maintaining its aspect ratio (AR).
     
         Keyword arguments:   
-            H (int):             The original height of the image
-            W (int):             The original width of the image
-            target_size (tuple): The desired size of the resized image
-            picture (array):     The image to be resized
+            original_height (int): The original height of the image.
+            original_width (int): The original width of the image.
+            target_size (int): The desired size for the longer dimension of the resized image.
+            image (array): The image to be resized.
     
         Returns: 
-            the resized image with the same aspect ratio as the original image
+            array: The resized image with the same aspect ratio as the original image.
         
         '''
-        # Calculate the aspect ratio
+        # Calculate the aspect ratio of the image
         aspect_ratio = original_width / original_height        
         # Determine the new dimensions while maintaining the aspect ratio
         if original_height >= original_width:
@@ -62,8 +66,9 @@ class ImageOperations:
             new_width = target_size
             new_height = int(target_size / aspect_ratio)
         
-        # Resize the image
+        # Resize the image with opencv
         resized_image = cv2.resize(image, (new_width, new_height))
+
         return resized_image 
     
    

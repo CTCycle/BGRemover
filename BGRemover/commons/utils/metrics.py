@@ -3,7 +3,7 @@ import tensorflow as tf
 
 
 # [METRICS]
-#------------------------------------------------------------------------------
+###############################################################################
 class BGRMetrics:
 
     def __init__(self, seed):
@@ -13,7 +13,18 @@ class BGRMetrics:
 
     #--------------------------------------------------------------------------
     def compute_IoU(self, y_true, y_pred):
-        
+
+        '''
+        Computes the Intersection over Union (IoU) for two binary masks.
+
+        Keyword arguments:
+            y_true (array): The true binary mask.
+            y_pred (array): The predicted binary mask.
+
+        Returns:
+            x (float): The IoU value as a float32.
+
+        '''        
         intersection = (y_true * y_pred).sum()
         union = y_true.sum() + y_pred.sum() - intersection
         x = (intersection + 1e-15) / (union + 1e-15)

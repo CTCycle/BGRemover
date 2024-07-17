@@ -10,7 +10,8 @@ from BGRemover.commons.constants import MODEL_PATH
 from BGRemover.commons.logger import logger
 
 
-# Define the background removal function
+# [MAIN FUNCTION]
+###############################################################################
 def main_background_remover(images, output_folder):
 
     metrics = BGRMetrics(seed=42)   
@@ -35,7 +36,8 @@ def main_background_remover(images, output_folder):
     output_images = [process_image(image) for image in images]
     return output_images
 
-# Gradio Interface
+# [INTERFACE]
+###############################################################################
 def gradio_app():
     with gr.Blocks() as demo:
         gr.Markdown("## Pre-trained DeepLabV3+ Model with Squeeze and Excitation Network for Human Image Segmentation")
@@ -55,6 +57,7 @@ def gradio_app():
     
     return demo
 
-# Launch the Gradio app
+# [RUN APP]
+###############################################################################
 demo = gradio_app()
 demo.launch()

@@ -2,7 +2,8 @@ import os
 import cv2
 import numpy as np
 
-#------------------------------------------------------------------------------
+# [CORE APP FUNCTION]
+###############################################################################
 def background_removal(images_path, savepath, model):
 
     '''

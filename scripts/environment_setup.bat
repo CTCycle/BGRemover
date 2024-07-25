@@ -13,7 +13,8 @@ call conda activate BGRemover
 
 rem Install additional packages with pip
 echo STEP 2: Install python libraries and packages
-call pip install numpy python-opencv tensorflow==2.10 gradio
+call pip install numpy==1.26.4 python-opencv==4.10.0.84
+call pip install tensorflow==2.10 gradio==4.39.0
 if errorlevel 1 (
     echo Failed to install Python libraries.
     goto :eof

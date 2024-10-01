@@ -11,9 +11,9 @@ if %ERRORLEVEL%==0 (
     call conda activate BGRemover
     goto :dependencies
 ) else (
-    echo BGRemover environment has not been found, it will now be created using python 3.11
+    echo BGRemover environment has not been found, it will now be created using python 3.10
     echo Depending on your internet connection, this may take a while!
-    call conda create -n BGRemover python=3.11 -y
+    call conda create -n BGRemover python=3.10 -y
     call conda activate BGRemover
     goto :dependencies
 )

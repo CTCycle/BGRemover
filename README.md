@@ -8,14 +8,22 @@ DeepLabv3+ is a semantic segmentation architecture that improves upon DeepLabv3 
 
 ![DeepLabV3+ model architecture](./docs/snapshots/DeepLabV3_snapshot.png)
 
-## 3. How to use
-Run BGRemover.py and use the GUI to navigate the various options. In the main window, you can select both the source folder where your pictures are located, and the output folder where you want to save your processed images. Then, click on **Remove background** to process your pictures.
+## 3. Installation 
+The installation process on Windows has been designed for simplicity and ease of use. To begin, simply run `BGRemover.bat`. On its first execution, the installation procedure will automatically start with minimal user input required. The script will check if either Anaconda or Miniconda is installed on your system. If neither is found, you will need to install it manually. You can download and install Miniconda by following the instructions here: (https://docs.anaconda.com/miniconda/).
 
-## 4. Installation 
-The installation process is designed for simplicity, using .bat scripts to automatically create a virtual environment with all necessary dependencies. Please ensure that Anaconda or Miniconda is installed on your system before proceeding.
+After setting up Anaconda/Miniconda, the installation script will install all the necessary Python dependencies. If you'd prefer to handle the installation process separately, you can run the standalone installer by executing `setup/BGRemover_installer.bat`. You can also use a custom python environment by modifying `settings/launcher_configurations.ini` and setting use_custom_environment as true, while specifying the name of your custom environment.
 
-- The `scripts/environment_setup.bat` file offers a convenient one-click solution to set up your virtual environment.
-- **IMPORTANT:** run `scripts/package_setup.bat` if the path to the project folder is changed for any reason after installation, or the app won't work!
+**Important:** After installation, if the project folder is moved or its path is changed, the application will no longer function correctly. To fix this, you can either:
+
+- Open the main menu, select "BGRemover setup," and choose "Install project packages"
+- Manually run the following commands in the terminal, ensuring the project folder is set as the current working directory (CWD):
+
+    `conda activate BGRemover`
+
+    `pip install -e . --use-pep517` 
+
+## 4. How to use
+On Windows, run `BGRemover.bat` to launch the GUI (alternatively, you can launch the main app file running `python BGRemover/commons/main.py`). In the main window, you can select both the source folder where your pictures are located, and the output folder where you want to save your processed images. Then, click on **Remove background** to process your pictures. 
 
 ### 4.1 Pretrained model weights 
 Remember to add the pretrained weights in `BGRemover/commons/model` or the software won't function properly. 

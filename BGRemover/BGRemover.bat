@@ -59,7 +59,8 @@ if "%env_exists%"=="true" (
 ) else (
     if /i "%env_name%"=="BGRemover" (
         echo Running first-time installation for BGRemover. Please wait until completion and do not close the console!
-        call "%~dp0\..\setup\BGRemover_installer.bat"
+        call "%~dp0\..\setup\BGRemover_installer.bat" 
+        call cd ..\BGRemover
         set "custom_env_name=BGRemover"
         goto :main_menu
     ) else (
@@ -123,10 +124,12 @@ goto :setup_menu
 
 :eggs
 call conda activate %env_name% && cd .. && pip install -e . --use-pep517 && cd BGRemover
+pause
 goto :setup_menu
 
 :logs
 cd /d "%~dp0..\BGRemover\resources\logs"
 del *.log /q
-cd BGRemover
+cd ..\..
+pause
 goto :setup_menu
